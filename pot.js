@@ -20,7 +20,9 @@ class Pot {
 	}
 
 	getMarbles(){
-		return this.marbles;
+		var marblesToRemove = this.marbles;
+		this.marbles = [];
+		return marblesToRemove;
 	}
 
 	addMarble(marbleToAdd){

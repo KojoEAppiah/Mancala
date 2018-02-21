@@ -26,3 +26,8 @@ test('When a marble is added to a non-empty pot, said pot retains said marble', 
     pot.addMarble(marble2);
     expect(pot.getMarbles().length).toEqual(7);
 });
+
+test("'When getMarbles is called, the Pot's marbles member is set to an array of length 0", () => {
+	pot.getMarbles();
+    expect(pot.getMarbles().length).toEqual(0);
+});
