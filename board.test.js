@@ -66,3 +66,34 @@ test('When a Pot with 5 marbles is selected, the new 5 pots will gain a marble',
 	}
 
 });
+
+test('When a Pot is selected with enough marbles to cross sides more than once, the marbles are distributed appropriately', () => {
+
+	board.initPots(5, 16);
+
+	var marblesLeft = board.p1Pots[3].marbles.length;
+	
+	var selectedPot = 3;
+	board.selectPot(selectedPot, 0);
+
+	var i = selectedPot + 1;
+
+
+	while(marblesLeft > 0){
+		while(i < 5 && marblesLeft > 0){
+			if(i != selectedPot){
+		 	   expect(board.p1Pots[i++].marbles.length).toEqual(17);
+			}
+		 	else{
+		 	   expect(board.p1Pots[i++].marbles.length).toEqual(18);
+		 	   marblesLeft--;
+		 	}
+		}
+		i = 0;
+		while(i < 5 && marblesLeft > 0){
+	   		expect(board.p2Pots[i++].marbles.length).toEqual(19);
+	   		marblesLeft--;
+		}
+	}
+
+});
