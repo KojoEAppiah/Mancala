@@ -20,3 +20,15 @@ test('When initPots is passed 5 and 5, 5 pots are initialized with 5 marbles eac
 
     expect(fivePerPot).toBeTruthy();
 });
+
+
+test('When a board is in a win state, the Board.isWin returns true', () => {
+
+	board.initPots(5, 5);
+
+	for(var i = 0; i < board.p1Pots.length; i++){
+		board.p1Pots[i].getMarbles();
+	}
+
+    expect(board.isWin()).toBeTruthy();
+});
