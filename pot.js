@@ -1,4 +1,6 @@
-const Marble = require('./Marble.js');
+const Marble = require('./marble.js');
+const Clone = require('./clone.js');
+
 
 class Pot {
 	constructor(numberOfMarbles){
@@ -20,8 +22,8 @@ class Pot {
 	}
 
 	getMarbles(){
-		var marblesToRemove = this.marbles;
-		this.marbles = [];
+		var marblesToRemove = Clone(this.marbles);
+		this.marbles.length = 0;
 		return marblesToRemove;
 	}
 

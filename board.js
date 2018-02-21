@@ -35,6 +35,33 @@ class Board{
 
 		return false;
 	}
+
+	clone(){
+		
+		var newBoard = new Board();
+		for(var i; i < this.numberOfPots; i++){
+			newBoard.p1Pots[i] = this.p1Pots[i];
+		}
+		return newBoard;
+	}
+
+	selectPot(potNumber, side){
+
+		var marblesToDispense = this.p1Pots[potNumber].getMarbles();
+	
+		var i = potNumber+1;
+
+		while(marblesToDispense.length > 0){
+			while(i < 5 && marblesToDispense.length > 0){
+		 	   this.p1Pots[i++].addMarble(marblesToDispense.pop());
+			}
+			i = 0;
+			while(i < 5 && marblesToDispense.length > 0){
+		 	   this.p2Pots[i++].addMarble(marblesToDispense.pop());
+			}
+		}
+
+	}
 }
 
 module.exports = Board;
