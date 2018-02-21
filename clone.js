@@ -1,4 +1,4 @@
-//copy pasta-ed from the first answer here: https://stackoverflow.com/questions/728360/how-do-i-correctly-clone-a-javascript-object
+//copy pasta-ed from https://stackoverflow.com/questions/728360/how-do-i-correctly-clone-a-javascript-object
 
 function clone(obj) {
     var copy;
