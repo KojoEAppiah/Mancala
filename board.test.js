@@ -5,7 +5,7 @@ const Board = require('./board');
 var board;
 
 beforeEach(()=> { 
-	board = new Board(5);
+	board = new Board();
 });
 
 test("When a Board is initialized, the kalah's both start with 0 marbles", () => {

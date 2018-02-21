@@ -1,6 +1,9 @@
+const Board = require('./player.js');
+
 class Player {
 	
-	constructor(){
+	constructor(board){
+		this.board = board;
 		this.score = 0;
 	}
 }

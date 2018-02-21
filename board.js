@@ -2,12 +2,18 @@ const Marble = require('./marble');
 const Pot = require('./pot');
 
 class Board{
-	constructor(){
-		this.numberOfPots = 0;
-		this.p1Pots = [];
-		this.p2Pots = [];
-		this.p1Kalah = new Pot(0);
-		this.p2Kalah = new Pot(0);
+	constructor(boardToClone){
+		if(!boardToClone){
+			this.numberOfPots = 0;
+			this.p1Pots = [];
+			this.p2Pots = [];
+			this.p1Kalah = new Pot(0);
+			this.p2Kalah = new Pot(0);
+		}
+		else{
+			this.cloneBoard(boardToClone);
+			return this;
+		}
 	}
 
 	initPots(numberOfPots, marblesPerPot){
@@ -38,7 +44,7 @@ class Board{
 		return false;
 	}
 
-	clone(){
+	cloneBoard(boardToClone){
 		
 		var newBoard = new Board();
 		for(var i; i < this.numberOfPots; i++){
