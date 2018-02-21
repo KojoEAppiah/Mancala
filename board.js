@@ -6,6 +6,8 @@ class Board{
 		this.numberOfPots = 0;
 		this.p1Pots = [];
 		this.p2Pots = [];
+		this.p1Kalah = new Pot(0);
+		this.p2Kalah = new Pot(0);
 	}
 
 	initPots(numberOfPots, marblesPerPot){
@@ -52,6 +54,7 @@ class Board{
 		var i = potNumber+1;
 
 		while(marblesToDispense.length > 0){
+
 			while(i < 5 && marblesToDispense.length > 0){
 		 	   this.p1Pots[i++].addMarble(marblesToDispense.pop());
 			}

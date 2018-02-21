@@ -8,6 +8,14 @@ beforeEach(()=> {
 	board = new Board(5);
 });
 
+test("When a Board is initialized, the kalah's both start with 0 marbles", () => {
+
+	board.initPots(5, 5);
+
+    expect(board.p1Kalah.marbles.length).toEqual(0);
+    expect(board.p2Kalah.marbles.length).toEqual(0);
+});
+
 test('When initPots is passed 5 and 5, 5 pots are initialized with 5 marbles each', () => {
 
 	board.initPots(5, 5);
